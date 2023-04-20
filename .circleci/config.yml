@@ -16,7 +16,7 @@ jobs:
           root: ~/project
           paths:
             - .
-      - run: echo "Success!"
+      - run: coverage run test_HelloWorld.py
  
             
   deploy: # this can be any name you choose
