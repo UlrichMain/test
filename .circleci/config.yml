@@ -16,7 +16,7 @@ jobs:
           root: ~/project
           paths:
             - .
-      - run: helloWorld
+      - run: echo "Success!"
  
             
   deploy: # this can be any name you choose
