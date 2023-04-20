@@ -14,7 +14,7 @@ jobs:
           command: pip install -r requirements.txt
       - run:
           name: Run tests and collect coverage
-          command: coverage test_HelloWorld.py
+          command: coverage run test_HelloWorld.py
       - codecov/upload
 
 workflows:
