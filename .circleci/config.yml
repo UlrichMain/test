@@ -33,5 +33,4 @@ workflows:
   test_my_app:
     jobs:
       - build_and_test
-      - send_to_CodeCov
 
