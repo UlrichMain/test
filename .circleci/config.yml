@@ -14,18 +14,10 @@ jobs:
           root: ~/project
           paths:
             - .
-      - run: coverage run test_HelloWorld.py
-      - codecov/upload
- 
+      - run: coverage run test_HelloWorld.py 
+      - name: Upload coverage reports to Codecov with GitHub Action
+        uses: codecov/codecov-action@v3
             
-  deploy: # this can be any name you choose
-    executor: python/default
-    steps:
-      - attach_workspace:
-          at: ~/project
-      - heroku/deploy-via-git:
-          force: true # force push when pushing to the heroku remote, see: https://devcenter.heroku.com/articles/git
-
 
 workflows:
   test_my_app:
