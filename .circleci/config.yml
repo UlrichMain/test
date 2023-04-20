@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   python: circleci/python@2.0.3
-  codecov: codecov/codecov@3.2.4
 
 jobs:
   build_and_test: # this can be any name you choose
@@ -17,6 +16,8 @@ jobs:
           root: ~/project
           paths:
             - .
+      - run: helloWorld
+ 
             
   deploy: # this can be any name you choose
     executor: python/default
@@ -31,5 +32,4 @@ workflows:
   test_my_app:
     jobs:
       - build_and_test
-      - codecov/upload
 
