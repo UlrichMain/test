@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: codecov/codecov-action@v3
-      with:
+     with:
         token: ${{ secrets.CODECOV_TOKEN }}
         files: ./coverage1.xml,./coverage2.xml # optional
         flags: unittests # optional
