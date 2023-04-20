@@ -15,6 +15,7 @@ jobs:
           paths:
             - .
       - run: coverage run test_HelloWorld.py
+      - codecov/upload
  
             
   deploy: # this can be any name you choose
