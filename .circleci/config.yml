@@ -17,9 +17,7 @@ jobs:
           root: ~/project
           paths:
             - .
-    send_to_CodeCov:
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v3
+            
 
   deploy: # this can be any name you choose
     executor: python/default
@@ -28,6 +26,11 @@ jobs:
           at: ~/project
       - heroku/deploy-via-git:
           force: true # force push when pushing to the heroku remote, see: https://devcenter.heroku.com/articles/git
+
+
+    send_to_CodeCov:
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
 
 workflows:
   test_my_app:
