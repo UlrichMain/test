@@ -17,11 +17,8 @@ jobs:
       - run:
           name: Run tests and collect coverage
           command: coverage run test_HelloWorld.py
-      - run:
-          name: add to CodeCov
-          command: .\codecov.exe -t ${CODECOV_TOKEN}
 
-          
+      - codecov/upload
 
 
 
