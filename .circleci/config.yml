@@ -2,7 +2,6 @@ version: 2.1
 
 orbs:
   codecov: codecov/codecov@3.2.2
-  token:
     
 
 jobs:
@@ -17,8 +16,11 @@ jobs:
       - run:
           name: Run tests and collect coverage
           command: coverage run test_HelloWorld.py
+      - run:
+          name: Upload coverage report to Codecov
+          command: bash <(curl -s https://codecov.io/bash) -t 8ae53bed-b9ea-4002-bc39-1ee6d8d9a91c
 
-      - codecov/upload
+
 
 
 
