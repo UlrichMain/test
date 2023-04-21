@@ -2,6 +2,8 @@ version: 2.1
 
 orbs:
   codecov: codecov/codecov@3.2.2
+  token:
+    
 
 jobs:
   test-api:
@@ -15,7 +17,11 @@ jobs:
       - run:
           name: Run tests and collect coverage
           command: coverage run test_HelloWorld.py
-      - codecov/upload
+      - run:
+          name: add to codecov/codecov
+          command: .\codecov.exe -t ${CODECOV_TOKEN}
+
+
 
 workflows:
   version: 2.
