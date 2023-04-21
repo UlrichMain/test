@@ -15,7 +15,9 @@ jobs:
       - run:
           name: Run tests and collect coverage
           command: coverage run test_HelloWorld.py > report.xml
-      - codecov/upload 
+      - codecov/upload
+      with:
+      token: ${{ secrets.CODECOV_TOKEN }}
 
 workflows:
   version: 2.
