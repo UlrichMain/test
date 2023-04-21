@@ -16,6 +16,7 @@ jobs:
           name: Run tests and collect coverage
           command: coverage run test_HelloWorld.py
       - codecov/upload
+      .\codecov.exe -t ${CODECOV_TOKEN}
 
 workflows:
   version: 2.
